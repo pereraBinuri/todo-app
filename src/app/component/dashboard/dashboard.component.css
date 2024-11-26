@@ -1,0 +1,260 @@
+/* General Container */
+.container {
+    max-width: 900px;
+}
+
+/* Main Container Background Color */
+.bg-main {
+    background-color: #cfdadc; /* Custom background color */
+    padding: 30px 0; /* Optional padding for spacing */
+   
+}
+
+/* Define a custom background color */
+.custom-bg {
+    background-color: #cfdadc; /* Replace #e0f0ff with your desired color */
+}
+
+/* Inner Card Container */
+.col-md-8.col-lg-6 {
+    background-color: #c9b3e0; /* White background for card */
+    border-radius: 12px; /* Smooth rounded corners */
+    padding: 20px; /* Inner padding */
+}
+
+/* Header Container Styling */
+.header-container {
+    background: linear-gradient(135deg, #f87715, #e24312); /* Customize colors */
+    border-radius: 12px;
+    padding: 10px;
+    color: white;
+    text-align: center;
+}
+
+/* Input Group Styling */
+.input-group {
+    display: flex; /* Flexbox layout to align items horizontally */
+    justify-content: flex-start; /* Align items to the start */
+    align-items: center; /* Vertically align items */
+    border-radius: 8px;
+    background-color: #2f37d7;
+    overflow: hidden;
+}
+
+.input-group .row {
+    width: 100%; /* Ensure row takes up full width */
+}
+
+.input-group .form-control {
+    width: 100%; /* Make inputs and button take up full width of their respective columns */
+}
+
+.add-btn {
+    background-color: #5bf041; /* Green background */
+    color: white; /* White text color */
+    font-size: 1rem; /* Font size */
+    font-weight: 500; /* Slightly bolder text */
+    padding: 10px 15px; /* Padding around the button */
+    border-radius: 5px; /* Rounded corners */
+    border: none; /* Remove default border */
+    display: flex;
+    align-items: center; /* Align icon and text horizontally */
+    justify-content: center; /* Center the content inside */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Task Items */
+.shadow-sm {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Hover Effects */
+.btn-outline-danger:hover {
+    background-color: #e82222;
+}
+
+.btn-outline-primary:hover {
+    background-color: #2c86e6;
+}
+
+.btn-success:hover {
+    background-color: #28a745;
+    color: white;
+}
+
+.task-header {
+    color: #13191f; /* You can change this to your desired color */
+    font-size: 1.5rem; /* Set font size */
+    font-weight: 600; /* Set font weight */
+    text-transform: uppercase; /* Optional, makes the header text uppercase */
+    letter-spacing: 1px; /* Optional, adds letter spacing */
+    padding: 10px 15px; /* Adds some padding */
+    background-color: #cfdadc; /* Light background */
+    border-radius: 5px; /* Optional, gives rounded corners */
+    
+}
+
+/* Edit Modal Header */
+.edit-modal .modal-header {
+    background-color: #ff6f61; /* Soft coral color */
+    color: white;
+    font-family: 'Arial', sans-serif; /* Clean, modern font */
+    font-size: 20px;
+    font-weight: bold;
+    padding: 20px 25px;
+    border-radius: 8px 8px 0 0; /* Rounded top corners */
+    text-align: center; /* Center the title */
+    
+}
+
+/* Edit Modal Body */
+.edit-modal .modal-body {
+    background-color: #ffffff; /* Light gray background */
+    padding: 25px;
+    border-radius: 0 0 8px 8px; /* Rounded bottom corners */
+    border-top: 1px solid #ffffff; /* Soft top border */
+}
+
+/* Input fields for the Edit Modal */
+.edit-modal .input-group .form-control {
+    border-radius: 8px; /* Rounded input fields */
+    padding: 12px;
+    font-size: 16px;
+    margin-bottom: 20px; /* Space between fields */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Light shadow for inputs */
+    transition: all 0.3s ease; /* Smooth transition on focus */
+    
+}
+.edit-modal .input-group{
+    background-color: #ffffff;
+}
+
+/* Focus effect for input fields */
+.edit-modal .input-group .form-control:focus {
+    border-color: #ff6f61; /* Highlight on focus */
+    box-shadow: 0 0 8px rgba(255, 111, 97, 0.5); /* Glow effect */
+}
+
+/* Edit Modal Update Button */
+.edit-modal button.btn-outline-success {
+    background-color: #ff6f61;
+    border: 2px solid #ff6f61;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 25px;
+    transition: background-color 0.3s, transform 0.2s;
+    text-align: center;
+}
+
+.edit-modal button.btn-outline-success:hover {
+    background-color: #ff3d2e; /* Darker shade on hover */
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+/* Modal Footer (if any) */
+.edit-modal .modal-footer {
+    background-color: #f7f7f7;
+    border-top: 1px solid #e5e5e5;
+    padding: 15px;
+    text-align: center;
+}
+
+/* Close Button */
+.edit-modal .btn-close {
+    background-color: transparent; /* Close button in red */
+    
+    padding: 6px 6px;
+    transition: background-color 0.3s ease;
+}
+
+.edit-modal .btn-close:hover {
+    background-color: #e02a1f; /* Darker red on hover */
+}
+
+/* Edit Modal Overall Style */
+.edit-modal .modal-content {
+    border-radius: 15px; /* Rounded corners for the modal */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+}
+
+.edit-modal .modal-dialog {
+    max-width: 500px; /* Maximum width for better responsiveness */
+    margin: 1.75rem auto; /* Center the modal vertically */
+}
+
+/* Modal Background Overlay */
+.edit-modal .modal-backdrop {
+    background-color: rgba(0, 0, 0, 0.5); /* Darker background overlay */
+}
+
+/* Transition for Modal Opening */
+.edit-modal .modal.fade .modal-dialog {
+    transform: scale(0.8); /* Initial scale */
+    transition: transform 0.3s ease-out; /* Smooth transition for opening */
+}
+
+.edit-modal .modal.show .modal-dialog {
+    transform: scale(1); /* Final size */
+}
+
+
+/* Custom Search Bar Styling */
+.search-bar {
+    display: flex; /* Use flexbox to arrange input and button horizontally */
+    justify-content: flex-start;
+    align-items: center; /* Vertically align the input and button */
+    border-radius: 8px;
+}
+
+
+/* Search Input */
+.search-bar .form-control {
+    width: 70%; /* Allocate 80% of width to the search input */
+}
+
+/* Search Button */
+.search-bar button {
+    width: auto; /* Allocate 10% of width to the button */
+    border-radius: 6px; /* Rounded corners */
+    background-color: #645f5f; /* Button background color */
+    border: none; /* Remove button border */
+    color: white; /* White icon */
+    font-size: 18px; /* Icon size */
+    padding: 5px 5px; /* Button padding */
+    margin-left: 10px; /* Space between input and button */
+    transition: background-color 0.3s ease; /* Button hover effect */
+}
+
+/* Button Hover Effect */
+.search-bar button:hover {
+    background-color: #e31111; /* Change to green on hover */
+    color: white; /* Keep icon white */
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+    }
+
+    /* Ensure button is centered even on smaller screens */
+    .button-container {
+        justify-content: center; /* Reaffirm button centering */
+    }
+
+    .search-bar {
+        margin-bottom: 15px; /* Add margin at the bottom for better spacing on mobile */
+    }
+
+    .search-bar .form-control {
+        width: 70%; /* Reduce the width of the input on smaller screens */
+    }
+
+    .search-bar button {
+        width: 20%; /* Increase the button size on smaller screens */
+    }
+}

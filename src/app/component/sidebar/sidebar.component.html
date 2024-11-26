@@ -1,0 +1,12 @@
+<app-header (sidebarToggle)="toggleSidebar()"></app-header>
+<div class="sidebar" [ngClass]="{ 'open': isOpen }">
+    <ul>
+        <li (click)="onFilterAll()">All</li>
+        <li (click)="onFilterPending()">Pending</li>
+        <li (click)="onFilterCompleted()">Completed</li>
+    </ul>
+    <button class="close-btn" (click)="toggleSidebar()">
+        <span class="material-icons">close</span>
+    </button>        
+</div>
+

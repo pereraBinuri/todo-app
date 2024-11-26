@@ -1,0 +1,86 @@
+/* Basic Sidebar Styles */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    /* Initially hidden to the left */
+    height: 100%;
+    width: 250px;
+    background-color: #333333;
+    color: white;
+    transition: left 0.3s ease;
+    z-index: 1000;
+    padding-top: 60px;
+}
+
+.sidebar.open {
+    left: 0;
+    /* When open, move to the left (visible) */
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar li {
+    padding: 20px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 18px;
+}
+
+.sidebar li:hover {
+    background-color: #575757;
+}
+
+.open-btn {
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #111;
+    color: white;
+    padding: 10px 20px;
+    margin: 10px;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1010;
+}
+
+/* Close button styling */
+.close-btn {
+    font-size: 24px;          /* Size of the icon */
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    background-color: transparent;
+    color: rgb(255, 255, 255);
+    border: none;
+    padding: 5px;   
+    z-index: 1011;           /* Optional padding */
+}
+
+/* Optional: Change color on hover */
+.close-btn:hover {
+    color: #ff0000;                 /* For example, red on hover */
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        /* Full width on smaller screens */
+        left: -100%;
+        /* Initially hidden */
+    }
+
+    .sidebar.open {
+        left: 0;
+        /* Show on open */
+    }
+
+    .open-btn {
+        display: block;
+    }
+}
