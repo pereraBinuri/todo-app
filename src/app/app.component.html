@@ -1,8 +1,5 @@
 <app-sidebar (sidebarToggle)="toggleSidebar()"></app-sidebar>
 
-<!-- Main content where routed views will appear -->
 <div class="main-content">
-  <app-dashboard>  <!-- Include app-dashboard here -->
-    <router-outlet></router-outlet> <!-- Routed components will be displayed inside app-dashboard -->
-  </app-dashboard>
+  <router-outlet></router-outlet>
 </div>

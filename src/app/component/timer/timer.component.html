@@ -1,0 +1,18 @@
+<div class="timer-container">
+    <h1>Countdown Timer</h1>
+    <div class="timer-display">
+      <span>{{ minutes }}</span>:<span>{{ seconds }}</span>
+    </div>
+    <div class="timer-controls">
+      <input
+        type="number"
+        [(ngModel)]="inputMinutes"
+        placeholder="Enter minutes"
+        class="timer-input"
+      />
+      <button (click)="startTimer()" class="btn">Start</button>
+      <button (click)="stopTimer()" class="btn btn-stop">Stop</button>
+      <button (click)="resetTimer()" class="btn btn-reset">Reset</button>
+    </div>
+  </div>
+  

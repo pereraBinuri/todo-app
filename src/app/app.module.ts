@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { provideHttpClient } from '@angular/common/http';
 import { SidebarComponent } from './component/sidebar/sidebar.component';
 import { HeaderComponent } from './component/header/header.component';
+import { TimerComponent } from './component/timer/timer.component';
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import { HeaderComponent } from './component/header/header.component';
     DashboardComponent,
     SidebarComponent,
     HeaderComponent,
+    TimerComponent,
   ],
   imports: [
     BrowserModule,
