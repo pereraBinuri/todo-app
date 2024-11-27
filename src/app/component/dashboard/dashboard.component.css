@@ -1,13 +1,14 @@
 /* General Container */
 .container {
     max-width: 900px;
+    
 }
 
 /* Main Container Background Color */
 .bg-main {
     background-color: #cfdadc; /* Custom background color */
     padding: 30px 0; /* Optional padding for spacing */
-   
+    /*background-image: url(./wallpaper1.jpg);*/
 }
 
 /* Define a custom background color */

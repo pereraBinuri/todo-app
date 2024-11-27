@@ -20,6 +20,8 @@ export class DashboardComponent implements OnInit {
   filter: 'all' | 'completed' | 'pending' = 'all'; // Track filter status
   
   searchQuery: string = ''; // For search functionality
+
+  backgroundImage: string = 'assets/images/wallpaper.jpg';
   
   constructor(private crudService: CrudService, private filterService: FilterService) {}
 
