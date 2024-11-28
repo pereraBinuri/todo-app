@@ -89,7 +89,11 @@ export class AllComponent implements OnInit {
       (response) => {
         const index = this.todos.findIndex(todo => todo.id === updatedTodo.id);
         if (index !== -1) {
-          this.todos[index] = updatedTodo;
+          // Replace the old todo with the updated one in the list
+        this.todos[index] = updatedTodo;
+
+        // Update filteredTodos if it was applied (e.g., search filters)
+        this.filteredTodos = [...this.todos];
         }
       },
       (error) => alert("Failed to update task")
