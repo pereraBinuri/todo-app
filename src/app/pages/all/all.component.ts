@@ -13,6 +13,7 @@ export class AllComponent implements OnInit {
   todoObj: Todo = new Todo();
   addTodoValue: string = '';
   editTodoValue: string = '';  // Used for editing the task title
+  filteredTodos: Todo[] = [];
 
   constructor(private crudService: CrudService) {}
 
@@ -25,6 +26,7 @@ export class AllComponent implements OnInit {
       .pipe(
         tap((data: Todo[]) => {
           this.todos = data;
+          this.filteredTodos = data; // Initialize filteredTodos
         }),
         catchError(err => {
           alert("Failed to fetch todos");
@@ -96,5 +98,12 @@ export class AllComponent implements OnInit {
   deleteTodo(todo: Todo) {
     this.todos = this.todos.filter(t => t.id !== todo.id);
     this.crudService.deleteTodo(todo).subscribe();
+  }
+
+  onSearch(query: string) {
+    const lowerCaseQuery = query.toLowerCase().trim();
+    this.filteredTodos = this.todos.filter(todo =>
+      todo.title.toLowerCase().includes(lowerCaseQuery)
+    );
   }
 }

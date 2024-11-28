@@ -1,3 +1,16 @@
+/* Input Group Styling */
+.input-group {
+    display: flex;
+    /* Flexbox layout to align items horizontally */
+    justify-content: flex-start;
+    /* Align items to the start */
+    align-items: center;
+    /* Vertically align items */
+    border-radius: 8px;
+    background-color: #2f37d7;
+    overflow: hidden;
+}
+
 /* Custom Search Bar Styling */
 .search-bar {
     display: flex; /* Use flexbox to arrange input and button horizontally */

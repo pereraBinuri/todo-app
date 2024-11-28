@@ -28,9 +28,12 @@
                 </div>
             </div>
 
+            <!-- Search Component -->
+            <app-search (searchEvent)="onSearch($event)"></app-search>
+
             <!-- Task List -->
             <app-task-item
-                [todos]="todos"
+                [todos]="filteredTodos"
                 (statusChange)="toggleStatus($event)"
                 (edit)="onEditTodo($event)"
                 (delete)="deleteTodo($event)">
