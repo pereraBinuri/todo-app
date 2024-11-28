@@ -74,6 +74,8 @@ export class DashboardComponent implements OnInit {
       this.filteredTodos = this.filteredTodos.filter(todo => 
         todo.title.toLowerCase().includes(this.searchQuery.toLowerCase())
       );
+    }else if(!this.searchQuery){
+      this.getAllTodos();
     }
   }
   
