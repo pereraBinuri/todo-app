@@ -13,7 +13,9 @@ export class AllComponent implements OnInit {
   todoObj: Todo = new Todo();
   addTodoValue: string = '';
   editTodoValue: string = '';  // Used for editing the task title
+  editDueDate: string = ''; // Due date for editing
   filteredTodos: Todo[] = [];
+  //selectedTodo: Todo | null = null; // Store the selected todo for editing
 
   constructor(private crudService: CrudService) {}
 
