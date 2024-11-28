@@ -1,1 +1,41 @@
-<p>complete works!</p>
+<!-- Container -->
+<div class="container-fluid bg-main">
+    <div class="row mt-4 justify-content-center" style="min-height: 600px;">
+        <div class="col-md-5 col-lg-6 shadow-lg p-4 rounded-4">
+
+            <!-- Search Component -->
+            <app-search (searchEvent)="onSearch($event)"></app-search>
+
+            <!-- Task List -->
+            <app-task-item
+                [todos]="filteredCompleteTodos"
+                (statusChange)="toggleStatus($event)"
+                (edit)="onEditTodo($event)"
+                (delete)="deleteTodo($event)">
+            </app-task-item>
+
+        </div>
+    </div>
+</div>
+
+<!-- Modal for Editing Task -->
+<div class="modal fade edit-modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Edit Task</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Edit Task" [(ngModel)]="editTodoValue">
+                    <input type="datetime-local" class="form-control" [(ngModel)]="todoObj.dueDate">
+                </div>
+                <button class="btn btn-outline-success" type="button" data-bs-dismiss="modal" (click)="editTodo()">
+                    Update
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
