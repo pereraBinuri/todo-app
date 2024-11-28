@@ -12,6 +12,7 @@ export class AllComponent implements OnInit {
   todos: Todo[] = [];
   todoObj: Todo = new Todo();
   addTodoValue: string = '';
+  editTodoValue: string = '';  // Used for editing the task title
 
   constructor(private crudService: CrudService) {}
 
@@ -63,13 +64,34 @@ export class AllComponent implements OnInit {
     this.crudService.editTodo(todo).subscribe();
   }
 
-  editTodo(updatedTodo: Todo) {
-    const index = this.todos.findIndex(todo => todo.id === updatedTodo.id);
-    if (index !== -1) {
-      this.todos[index] = updatedTodo;
-    }
-    this.crudService.editTodo(updatedTodo).subscribe();
+  // Open the Edit Modal and populate the fields
+  onEditTodo(todo: Todo) {
+    this.editTodoValue = todo.title;
+    this.todoObj.dueDate = todo.dueDate;
+    this.todoObj.id = todo.id;  // Store the task ID for editing
   }
+
+  // Edit the task after modal form submission
+  editTodo() {
+    if (!this.editTodoValue || !this.todoObj.dueDate) {
+      alert("Task name and due date cannot be empty");
+      return;
+    }
+
+    // Update the task with the new values
+    const updatedTodo = { ...this.todoObj, title: this.editTodoValue };
+
+    this.crudService.editTodo(updatedTodo).subscribe(
+      (response) => {
+        const index = this.todos.findIndex(todo => todo.id === updatedTodo.id);
+        if (index !== -1) {
+          this.todos[index] = updatedTodo;
+        }
+      },
+      (error) => alert("Failed to update task")
+    );
+  }
+
 
   deleteTodo(todo: Todo) {
     this.todos = this.todos.filter(t => t.id !== todo.id);
