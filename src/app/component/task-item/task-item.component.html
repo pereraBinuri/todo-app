@@ -1,0 +1,16 @@
+<div style="overflow-y: auto; height: 350px;">
+    <div class="m-3" *ngFor="let todo of todos">
+        <div class="p-3 shadow-sm bg-light rounded-3 d-flex align-items-center justify-content-between">
+            <input type="checkbox" [checked]="todo.status === 'completed'" (change)="onStatusChange(todo)"
+                class="form-check-input me-3">
+            <div class="flex-grow-1 me-3"> {{todo.title}} </div>
+            <button class="btn btn-outline-primary me-2" data-bs-toggle="modal"
+                data-bs-target="#exampleModal" (click)="onEdit(todo)">
+                <i class="bi bi-pencil"></i>
+            </button>
+            <button class="btn btn-outline-danger" (click)="onDelete(todo)">
+                <i class="bi bi-trash"></i>
+            </button>
+        </div>
+    </div>
+</div>

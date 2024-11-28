@@ -1,9 +1,15 @@
 <app-header (sidebarToggle)="toggleSidebar()"></app-header>
 <div class="sidebar" [ngClass]="{ 'open': isOpen }">
     <ul>
-        <li (click)="onFilterAll()">All</li>
-        <li (click)="onFilterPending()">Pending</li>
-        <li (click)="onFilterCompleted()">Completed</li>
+        <li>
+            <a routerLink="/all" (click)="toggleSidebar()">All</a>
+        </li>
+        <li>
+            <a routerLink="/pending" (click)="toggleSidebar()">Pending</a>
+        </li>
+        <li>
+            <a routerLink="/complete" (click)="toggleSidebar()">Completed</a>
+        </li>
         <li>
             <a routerLink="/timer" (click)="toggleSidebar()">Timer</a>
         </li>

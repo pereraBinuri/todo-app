@@ -1,0 +1,101 @@
+/* General Container */
+.container {
+    max-width: 900px;
+
+}
+
+/* Main Container Background Color */
+.bg-main {
+    background-color: #cfdadc;
+    /* Custom background color */
+    padding: 30px 0;
+    /* Optional padding for spacing */
+    /*background-image: url(./wallpaper1.jpg);*/
+}
+
+/* Define a custom background color */
+.custom-bg {
+    background-color: #cfdadc;
+    /* Replace #e0f0ff with your desired color */
+}
+
+/* Inner Card Container */
+.col-md-8.col-lg-6 {
+    background-color: #c9b3e0;
+    /* White background for card */
+    border-radius: 12px;
+    /* Smooth rounded corners */
+    padding: 20px;
+    /* Inner padding */
+}
+
+/* Header Container Styling */
+.header-container {
+    background: linear-gradient(135deg, #f87715, #e24312);
+    /* Customize colors */
+    border-radius: 12px;
+    padding: 10px;
+    color: white;
+    text-align: center;
+}
+
+/* Input Group Styling */
+.input-group {
+    display: flex;
+    /* Flexbox layout to align items horizontally */
+    justify-content: flex-start;
+    /* Align items to the start */
+    align-items: center;
+    /* Vertically align items */
+    border-radius: 8px;
+    background-color: #2f37d7;
+    overflow: hidden;
+}
+
+.input-group .row {
+    width: 100%;
+    /* Ensure row takes up full width */
+}
+
+.input-group .form-control {
+    width: 100%;
+    /* Make inputs and button take up full width of their respective columns */
+}
+
+.add-btn {
+    background-color: #5bf041;
+    /* Green background */
+    color: white;
+    /* White text color */
+    font-size: 1rem;
+    /* Font size */
+    font-weight: 500;
+    /* Slightly bolder text */
+    padding: 10px 15px;
+    /* Padding around the button */
+    border-radius: 5px;
+    /* Rounded corners */
+    border: none;
+    /* Remove default border */
+    display: flex;
+    align-items: center;
+    /* Align icon and text horizontally */
+    justify-content: center;
+    /* Center the content inside */
+    transition: background-color 0.3s ease;
+    /* Smooth transition for hover effect */
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+    }
+
+    /* Ensure button is centered even on smaller screens */
+    .button-container {
+        justify-content: center;
+        /* Reaffirm button centering */
+    }
+}

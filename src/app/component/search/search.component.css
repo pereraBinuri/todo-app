@@ -1,0 +1,48 @@
+/* Custom Search Bar Styling */
+.search-bar {
+    display: flex; /* Use flexbox to arrange input and button horizontally */
+    justify-content: flex-start;
+    align-items: center; /* Vertically align the input and button */
+    border-radius: 8px;
+}
+
+
+/* Search Input */
+.search-bar .form-control {
+    width: 70%; /* Allocate 80% of width to the search input */
+}
+
+/* Search Button */
+.search-bar button {
+    width: auto; /* Allocate 10% of width to the button */
+    border-radius: 6px; /* Rounded corners */
+    background-color: #645f5f; /* Button background color */
+    border: none; /* Remove button border */
+    color: white; /* White icon */
+    font-size: 18px; /* Icon size */
+    padding: 5px 5px; /* Button padding */
+    margin-left: 10px; /* Space between input and button */
+    transition: background-color 0.3s ease; /* Button hover effect */
+}
+
+/* Button Hover Effect */
+.search-bar button:hover {
+    background-color: #e31111; /* Change to green on hover */
+    color: white; /* Keep icon white */
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .search-bar {
+        margin-bottom: 15px; /* Add margin at the bottom for better spacing on mobile */
+    }
+
+    .search-bar .form-control {
+        width: 70%; /* Reduce the width of the input on smaller screens */
+    }
+
+    .search-bar button {
+        width: 20%; /* Increase the button size on smaller screens */
+    }
+}

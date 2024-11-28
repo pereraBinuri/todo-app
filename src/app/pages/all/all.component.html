@@ -1,0 +1,41 @@
+<!-- Container -->
+<div class="container-fluid bg-main">
+    <div class="row mt-4 justify-content-center" style="min-height: 600px;">
+        <div class="col-md-5 col-lg-6 shadow-lg p-4 rounded-4">
+
+            <!-- Header with Gradient Background and Icon -->
+            <div class="card header-container shadow-sm rounded-3 p-3 mb-4">
+                <!-- Input Fields (Task Title and Due Date) -->
+                <div class="input-group p-3 mb-3 shadow-sm rounded-3">
+                    <div class="row w-100 d-flex align-items-center">
+                        <!-- Task Title -->
+                        <div class="col-md-6 mb-3">
+                            <input type="text" class="form-control" placeholder="Enter Task" name="todo"
+                                [(ngModel)]="addTodoValue">
+                        </div>
+                        <!-- Due Date -->
+                        <div class="col-md-4 mb-3">
+                            <input type="datetime-local" class="form-control" placeholder="Due Date"
+                                [(ngModel)]="todoObj.dueDate">
+                        </div>
+                        <!-- Add Button -->
+                        <div class="col-md-2 mb-3 text-center">
+                            <button class="btn add-btn w-100" type="button" (click)="addTodo()">
+                                <i class="bi bi-plus-lg"></i> Add
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Task List -->
+            <app-task-item
+                [todos]="todos"
+                (statusChange)="toggleStatus($event)"
+                (edit)="editTodo($event)"
+                (delete)="deleteTodo($event)">
+            </app-task-item>
+
+        </div>
+    </div>
+</div>

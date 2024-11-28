@@ -8,7 +8,12 @@ import { FormsModule } from '@angular/forms';
 import { provideHttpClient } from '@angular/common/http';
 import { SidebarComponent } from './component/sidebar/sidebar.component';
 import { HeaderComponent } from './component/header/header.component';
-import { TimerComponent } from './component/timer/timer.component';
+import { TimerComponent } from './pages/timer/timer.component';
+import { PendingComponent } from './pages/pending/pending.component';
+import { CompleteComponent } from './pages/complete/complete.component';
+import { AllComponent } from './pages/all/all.component';
+import { SearchComponent } from './component/search/search.component';
+import { TaskItemComponent } from './component/task-item/task-item.component';
 
 
 @NgModule({
@@ -18,6 +23,11 @@ import { TimerComponent } from './component/timer/timer.component';
     SidebarComponent,
     HeaderComponent,
     TimerComponent,
+    PendingComponent,
+    CompleteComponent,
+    AllComponent,
+    SearchComponent,
+    TaskItemComponent,
   ],
   imports: [
     BrowserModule,
