@@ -12,9 +12,9 @@ export class CompleteComponent implements OnInit {
   todos: Todo[] = [];
   filteredCompleteTodos: Todo[] = [];
   todoObj: Todo = new Todo();
-  editTodoValue: string = ''; 
+  editTodoValue: string = '';
 
-  constructor(private crudService: CrudService) {}
+  constructor(private crudService: CrudService) { }
 
   ngOnInit() {
     this.fetchCompletedTodos();
@@ -43,7 +43,7 @@ export class CompleteComponent implements OnInit {
         const index = this.todos.findIndex(t => t.id === todo.id);
         if (index !== -1) {
           this.todos[index] = todo;
-  
+
           // Reapply the filter to exclude completed tasks from the pending list
           this.filteredCompleteTodos = this.todos.filter(t => t.status === 'completed');
         }
@@ -51,14 +51,17 @@ export class CompleteComponent implements OnInit {
       (error) => alert("Failed to update status")
     );
   }
-  
 
+
+  // Open the Edit Modal and populate the fields
   // Open the Edit Modal and populate the fields
   onEditTodo(todo: Todo) {
     this.editTodoValue = todo.title;
     this.todoObj.dueDate = todo.dueDate;
     this.todoObj.id = todo.id;  // Store the task ID for editing
+    this.todoObj.status = todo.status;  // Preserve the status as well
   }
+
 
   // Edit the task after modal form submission
   editTodo() {
@@ -67,23 +70,24 @@ export class CompleteComponent implements OnInit {
       return;
     }
 
-    // Update the task with the new values
-    const updatedTodo = { ...this.todoObj, title: this.editTodoValue, status: this.todoObj.status  };
+    // Preserve the original status
+    const updatedTodo = { ...this.todoObj, title: this.editTodoValue, status: this.todoObj.status };
 
     this.crudService.editTodo(updatedTodo).subscribe(
       (response) => {
         const index = this.todos.findIndex(todo => todo.id === updatedTodo.id);
         if (index !== -1) {
-           // Update the todo in the todos array
-        this.todos[index] = updatedTodo;
+          // Update the todo in the todos array
+          this.todos[index] = updatedTodo;
 
-        // Reapply the filter to only include completed todos
-        this.filteredCompleteTodos = this.todos.filter(todo => todo.status === 'completed');
+          // Reapply the filter to only include completed todos
+          this.filteredCompleteTodos = this.todos.filter(todo => todo.status === 'completed');
         }
       },
       (error) => alert("Failed to update task")
     );
   }
+
 
 
   deleteTodo(etodo: Todo) {
@@ -101,7 +105,7 @@ export class CompleteComponent implements OnInit {
 
   onSearch(query: string) {
     const lowerCaseQuery = query.toLowerCase().trim();
-  
+
     if (!lowerCaseQuery) {
       // Reset to show only completed todos when the search bar is cleared
       this.filteredCompleteTodos = this.todos.filter(todo => todo.status === 'completed');
@@ -112,5 +116,5 @@ export class CompleteComponent implements OnInit {
       );
     }
   }
-  
+
 }

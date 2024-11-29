@@ -73,6 +73,7 @@ export class AllComponent implements OnInit {
     this.editTodoValue = todo.title;
     this.todoObj.dueDate = todo.dueDate;
     this.todoObj.id = todo.id;  // Store the task ID for editing
+    this.todoObj.status = todo.status;  // Preserve the status as well
   }
 
   // Edit the task after modal form submission
@@ -83,7 +84,7 @@ export class AllComponent implements OnInit {
     }
 
     // Update the task with the new values
-    const updatedTodo = { ...this.todoObj, title: this.editTodoValue };
+    const updatedTodo = { ...this.todoObj, title: this.editTodoValue, status: this.todoObj.status  };
 
     this.crudService.editTodo(updatedTodo).subscribe(
       (response) => {
