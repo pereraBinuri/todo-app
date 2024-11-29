@@ -37,8 +37,21 @@ export class CompleteComponent implements OnInit {
 
   toggleStatus(todo: Todo) {
     todo.status = todo.status === 'completed' ? 'pending' : 'completed';
-    this.crudService.editTodo(todo).subscribe();
+    this.crudService.editTodo(todo).subscribe(
+      () => {
+        // Update the local todos array to reflect the change
+        const index = this.todos.findIndex(t => t.id === todo.id);
+        if (index !== -1) {
+          this.todos[index] = todo;
+  
+          // Reapply the filter to exclude completed tasks from the pending list
+          this.filteredCompleteTodos = this.todos.filter(t => t.status === 'completed');
+        }
+      },
+      (error) => alert("Failed to update status")
+    );
   }
+  
 
   // Open the Edit Modal and populate the fields
   onEditTodo(todo: Todo) {
