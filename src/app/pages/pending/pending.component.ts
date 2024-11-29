@@ -56,13 +56,17 @@ export class PendingComponent {
     }
 
     // Update the task with the new values
-    const updatedTodo = { ...this.todoObj, title: this.editTodoValue };
+    const updatedTodo = { ...this.todoObj, title: this.editTodoValue, status: this.todoObj.status  };
 
     this.crudService.editTodo(updatedTodo).subscribe(
       (response) => {
         const index = this.todos.findIndex(todo => todo.id === updatedTodo.id);
         if (index !== -1) {
-          this.todos[index] = updatedTodo;
+          // Update the todo in the todos array
+        this.todos[index] = updatedTodo;
+
+        // Reapply the filter to only include pending todos
+        this.filteredPendingTodos = this.todos.filter(todo => todo.status === 'pending');
         }
       },
       (error) => alert("Failed to update task")
@@ -70,10 +74,18 @@ export class PendingComponent {
   }
 
 
-  deleteTodo(todo: Todo) {
-    this.todos = this.todos.filter(t => t.id !== todo.id);
-    this.crudService.deleteTodo(todo).subscribe();
+  deleteTodo(etodo: Todo) {
+    this.crudService.deleteTodo(etodo)
+      .pipe(
+        tap(() => this.fetchPendingTodos()), // Refresh after delete
+        catchError(err => {
+          alert("Failed to delete todo");
+          return of(null); // Return null observable on error
+        })
+      )
+      .subscribe();
   }
+
 
   onSearch(query: string) {
     const lowerCaseQuery = query.toLowerCase().trim();

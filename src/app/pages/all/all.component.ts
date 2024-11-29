@@ -101,10 +101,18 @@ export class AllComponent implements OnInit {
   }
 
 
-  deleteTodo(todo: Todo) {
-    this.todos = this.todos.filter(t => t.id !== todo.id);
-    this.crudService.deleteTodo(todo).subscribe();
+  deleteTodo(etodo: Todo) {
+    this.crudService.deleteTodo(etodo)
+      .pipe(
+        tap(() => this.fetchTodos()), // Refresh after delete
+        catchError(err => {
+          alert("Failed to delete todo");
+          return of(null); // Return null observable on error
+        })
+      )
+      .subscribe();
   }
+
 
   onSearch(query: string) {
     const lowerCaseQuery = query.toLowerCase().trim();
