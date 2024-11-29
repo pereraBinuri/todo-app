@@ -14,3 +14,16 @@
     font-size: 1.5rem;
     cursor: pointer;
 }
+
+.logout-btn {
+    padding: 8px 16px;
+    color: white;
+    background-color: #3498db;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.logout-btn:hover {
+    background-color: #2980b9;
+}
