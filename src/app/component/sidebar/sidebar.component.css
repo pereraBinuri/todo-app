@@ -35,6 +35,23 @@
     background-color: #575757;
 }
 
+/* Remove underline from all anchor tags in the sidebar */
+.sidebar a {
+    text-decoration: none; /* Removes the underline */
+}
+
+
+/* Add this to your sidebar.component.css */
+.sidebar li a.active {
+    color: #ffcc00; /* Example: change text color to yellow */
+}
+
+/* Optional: Add hover effect to the active item */
+.sidebar li a.active:hover {
+    background-color: #4e4e4e;
+}
+
+
 .open-btn {
     font-size: 20px;
     cursor: pointer;

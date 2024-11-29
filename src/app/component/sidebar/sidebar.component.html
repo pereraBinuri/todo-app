@@ -2,20 +2,20 @@
 <div class="sidebar" [ngClass]="{ 'open': isOpen }">
     <ul>
         <li>
-            <a routerLink="/all" (click)="toggleSidebar()">All</a>
+            <a routerLink="/all" (click)="toggleSidebar()" routerLinkActive="active"
+                [routerLinkActiveOptions]="{ exact: true }">All</a>
         </li>
         <li>
-            <a routerLink="/pending" (click)="toggleSidebar()">Pending</a>
+            <a routerLink="/pending" (click)="toggleSidebar()" routerLinkActive="active">Pending</a>
         </li>
         <li>
-            <a routerLink="/complete" (click)="toggleSidebar()">Completed</a>
+            <a routerLink="/complete" (click)="toggleSidebar()" routerLinkActive="active">Completed</a>
         </li>
         <li>
-            <a routerLink="/timer" (click)="toggleSidebar()">Timer</a>
+            <a routerLink="/timer" (click)="toggleSidebar()" routerLinkActive="active">Timer</a>
         </li>
     </ul>
     <button class="close-btn" (click)="toggleSidebar()">
         <span class="material-icons">close</span>
-    </button>        
+    </button>
 </div>
-
