@@ -39,7 +39,7 @@
     position: relative;
     width: 100%;
     height: 50px;
-    margin: 15px 0;
+    margin-bottom: 25px; 
 }
 
 .input-box input {
@@ -52,8 +52,20 @@
     border-radius: 40px;
     font-size: 16px;
     color: #fff;
-    padding: 20px 45px 20px 20px;
+    padding: 10px 45px 10px 20px;
 }
+
+.input-box small {
+    color: red;
+    font-size: 12px;
+    position: absolute;
+    bottom: -18px; /* Position error message below the input */
+    left: 10px;
+    white-space: nowrap; /* Prevents long error messages from breaking */
+    overflow: hidden; /* Hides overflow for too-long messages */
+    text-overflow: ellipsis; /* Adds ellipsis for long error messages */
+}
+
 
 .input-box input::placeholder {
     color: #fff;
@@ -106,3 +118,28 @@
     color: #fff;
     font-size: 13px;
 }
+
+.error {
+    color: red;
+    font-size: 0.9em;
+    color: #ff4d4d; /* Red color for error */
+    /*background-color: #ffe6e6;*/ /* Light red background */
+    /*border: 1px solid #ffcccc;*/ /* Border to highlight the box */
+    /*padding: 10px;*/ /* Padding around the text */
+    /*border-radius: 5px;*/ /* Rounded corners */
+    text-align: center; /* Center-align the text */
+    margin: 15px auto; /* Center the box horizontally */
+    max-width: 400px; /* Limit the width of the box */
+    font-size: 16px; /* Adjust the font size */
+    font-weight: bold; /* Make the text bold */
+    /*box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);*/ /* Add a slight shadow for emphasis */
+  }
+  
+  input.ng-invalid.ng-touched {
+    border-color: red;
+  }
+  
+  input.ng-valid.ng-touched {
+    border-color: green;
+  }
+  
