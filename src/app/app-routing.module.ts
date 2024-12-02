@@ -9,7 +9,7 @@ import { authGuard } from './helpers/auth.guard';
 import { LayoutComponent } from './component/layout/layout.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: '', redirectTo: 'all', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { 
     path: '', 
@@ -23,7 +23,7 @@ const routes: Routes = [
     ]
   },
   //{ path: 'completed', component: CompletedTasksComponent }
-  { path: '**', redirectTo: 'login' }  // Redirect to login for any unknown route
+  { path: '**', redirectTo: 'all' }  // Redirect to login for any unknown route
 ];
 
 @NgModule({

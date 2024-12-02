@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class LayoutComponent {
 
+  isOpen = false;  // Flag to control sidebar visibility
+
+  // Function to toggle the sidebar
+  toggleSidebar() {
+    this.isOpen = !this.isOpen;
+  }
 }
