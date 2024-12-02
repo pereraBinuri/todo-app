@@ -21,10 +21,16 @@ export class LoginComponent {
     this.loginService.login(this.loginObj.username, this.loginObj.password).subscribe({
       next: (response) => {
         console.log('Login successful:', response);
+
+        // Assuming the access token is in response.accessToken
+        const accessToken = response.accessToken; 
+
          // Store the token from the response in localStorage
-         this.loginService.setAuthToken(response.token);
+         this.loginService.setAuthToken(accessToken);
+
         // Handle successful login, e.g., navigate to another page or store tokens
-        alert('Login successful!');
+        //alert('Login successful!');
+        
         // Navigate to the AllComponent after a successful login
         this.router.navigate(['/all']);  // Assuming the route for AllComponent is '/all'
       },
@@ -32,7 +38,7 @@ export class LoginComponent {
         console.error('Login failed:', error);
         this.loginError = 'Invalid login credentials';
         // Show error alert
-        alert('Invalid login credentials. Please try again.');
+        //alert('Invalid login credentials. Please try again.');
       }
     });
   }

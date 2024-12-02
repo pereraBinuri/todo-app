@@ -15,6 +15,7 @@ import { AllComponent } from './pages/all/all.component';
 import { SearchComponent } from './component/search/search.component';
 import { TaskItemComponent } from './component/task-item/task-item.component';
 import { LoginComponent } from './pages/login/login.component';
+import { LayoutComponent } from './component/layout/layout.component';
 
 
 
@@ -31,6 +32,7 @@ import { LoginComponent } from './pages/login/login.component';
     SearchComponent,
     TaskItemComponent,
     LoginComponent,
+    LayoutComponent,
   ],
   imports: [
     BrowserModule,

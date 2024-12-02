@@ -1,7 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -38,9 +37,9 @@ export class LoginService {
     localStorage.setItem('authToken', token);  // Store token in localStorage
   }
 
-  // Retrieve token
-  getAuthToken(): string | null {
-    return localStorage.getItem('authToken');  // Get token from localStorage
+   // Retrieve token
+   getAuthToken(): string | null {
+    return localStorage.getItem('authToken');
   }
 
   // Remove token during logout
