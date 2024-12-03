@@ -7,10 +7,15 @@ import { CompleteComponent } from './pages/complete/complete.component';
 import { LoginComponent } from './pages/login/login.component';
 import { authGuard } from './helpers/auth.guard';
 import { LayoutComponent } from './component/layout/layout.component';
+import { guestGuard } from './helpers/guest.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: 'all', pathMatch: 'full' },
-  { path: 'login', component: LoginComponent },
+  { 
+    path: 'login', 
+    component: LoginComponent,
+    canActivate: [guestGuard] // Apply the guest guard here
+  },
   { 
     path: '', 
     component: LayoutComponent,
