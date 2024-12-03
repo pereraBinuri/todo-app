@@ -12,7 +12,7 @@
             required
           />
           <i class='bx bxs-user'></i>
-          <div *ngIf="loginForm.get('username')?.invalid && loginForm.get('username')?.touched">
+          <div *ngIf="submitted && loginForm.get('username')?.invalid">
             <small *ngIf="loginForm.get('username')?.errors?.['required']">Username is required.</small>
             <small *ngIf="loginForm.get('username')?.errors?.['strictEmail']">Enter a valid email address.</small>
           </div>
@@ -27,7 +27,7 @@
             required
           />
           <i class='bx bxs-lock-alt'></i>
-          <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
+          <div *ngIf="submitted && loginForm.get('password')?.invalid">
             <small *ngIf="loginForm.get('password')?.errors?.['required']">Password is required.</small>
             <small *ngIf="loginForm.get('password')?.errors?.['minlength']">
               Password must be at least 6 characters.
@@ -37,7 +37,7 @@
 
         <p *ngIf="loginError" class="error">{{ loginError }}</p>
   
-        <button type="submit" class="btn" [disabled]="loginForm.invalid">Login</button>
+        <button type="submit" class="btn" >Login</button>
   
         <div class="register-link">
           <a href="#">Forget password?</a>
